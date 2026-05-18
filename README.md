@@ -6,8 +6,8 @@ An automated Python toolkit designed to solve a specific issue in Left 4 Dead 2 
 
 When downloading custom addons or mods for Left 4 Dead 2, some VPK files lack the `addoninfo.txt` file, making them difficult to manage or edit. This toolkit consists of two specialized Python scripts that follow the Unix philosophy (do one thing and do it well):
 
-1. **Scanner (`scanner.py`):** Scans the game's addon directory, identifies VPKs missing the `addoninfo.txt` file, and isolates them into a target folder.
-2. **Repair Tool (`repair.py`):** Automatically extracts the isolated VPKs, generates standard `addoninfo.txt` metadata, and repacks them in their original format using the official L4D2 `vpk.exe` tool via the command line.
+1. **Scanner (`VPKScanner.py`):** Scans the game's addon directory, identifies VPKs missing the `addoninfo.txt` file, and isolates them into a target folder.
+2. **Repair Tool (`VPKRepair.py`):** Automatically extracts the isolated VPKs, generates standard `addoninfo.txt` metadata, and repacks them in their original format using the official L4D2 `vpk.exe` tool via the command line.
 
 ## 🚀 Features
 
