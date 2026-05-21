@@ -13,8 +13,8 @@ When downloading custom addons or mods for Left 4 Dead 2, some VPK files lack th
 
 ### Option 1: Pre-compiled Executables (Recommended for Users)
 1. Download the latest executables for your operating system (e.g., `.exe` for Windows).
-3. **Run the Scanner:** Double-click `VPKScanner` and follow the terminal instructions to isolate missing VPKs.
-4. **Run the Repair Tool:** Double-click `VPKRepair` to automatically extract, fix, and repack your VPK files.
+2. **Run the Scanner:** Double-click `VPKScanner` and follow the terminal instructions to isolate missing VPKs.
+3. **Run the Repair Tool:** Double-click `VPKRepair` to automatically extract, fix, and repack your VPK files.
 *Note: You do NOT need Python installed to use this option!*
 
 ### Option 2: Running from Source (For Developers)
