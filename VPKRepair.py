@@ -4,12 +4,28 @@ import subprocess
 import shutil
 
 def main():
-    # --- SETTINGS ---
-    # The folder containing the broken VPK files (Target folder from the Scanner script)
-    target_folder = r"C:\L4D2_Repair"
+    print("--- Welcome to the L4D2 VPK Repair Tool ---\n")
+
+    # 1. Locate the folder containing the corrupted mods
+    target_folder = input(r"Please enter the path to the folder containing the broken mods (e.g., C:\L4D2_Repair):" + "\n> ").strip()
     
-    # Full path to the official L4D2 vpk.exe tool
-    vpk_exe_path = r"D:\SteamLibrary\steamapps\common\Left 4 Dead 2\bin\vpk.exe"
+    while not os.path.exists(target_folder):
+        print("\n[ERROR] The folder you entered could not be found!")
+        target_folder = input("Please enter a valid folder path:\n> ").strip()
+
+    print(f"[SUCCESSFUL] The Mod folder has been found: {target_folder}\n")
+
+    # 2. Locate vpk.exe file path.
+    vpk_exe_path = input(r"Please enter the full path to the ‘vpk.exe’ executable (e.g., C:\Steam\steamapps\common\Left 4 Dead 2\bin\vpk.exe):" + "\n> ").strip()
+    
+    # Check both whether the path exists and whether the file is actually vpk.exe
+    while not os.path.exists(vpk_exe_path) or not vpk_exe_path.lower().endswith("vpk.exe"):
+        print("\n[ERROR] The file was not found, or you selected the wrong file! The file path must end with 'vpk.exe'.")
+        vpk_exe_path = input("Please re-enter the full path to 'vpk.exe':\n> ").strip()
+
+    print(f"[SUCCESSFUL] vpk.exe found: {vpk_exe_path}\n")
+
+    
 
     # Default content for the missing addoninfo.txt
     addon_content = """"AddonInfo"
