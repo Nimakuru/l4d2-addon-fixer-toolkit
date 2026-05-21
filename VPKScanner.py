@@ -3,7 +3,7 @@ import os
 print("--- Welcome to L4D2 VPK Scanner Tool ---")
 
 # Get the file path from the user and remove leading and trailing spaces (.strip)
-addons_path = input("Please select where L4D2 addons were located:\n> ").strip()
+addons_path = input("Please enter where L4D2 addons were located:\n> ").strip()
 
 # Loop until the user enters a valid folder (Error Handling)
 while not os.path.exists(addons_path):
