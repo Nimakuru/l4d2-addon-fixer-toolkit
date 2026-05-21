@@ -1,14 +1,25 @@
 import os
+
+print("--- Welcome to L4D2 VPK Scanner Tool ---")
+
+# Get the file path from the user and remove leading and trailing spaces (.strip)
+addons_path = input("Please select where L4D2 addons were located:\n> ").strip()
+
+# Loop until the user enters a valid folder (Error Handling)
+while not os.path.exists(addons_path):
+    print("\n[ERROR] The folder you entered could not be found! You may have copied the path incorrectly.")
+    addons_path = input("Please paste the folder path again:\n> ").strip()
+
+print(f"\n[SUCCESSFUL] Folder found: {addons_path}")
+print("Starting to Scanning\n")
+
 import shutil
 import vpk
 
 def main():
     # --- SETTINGS ---
-    # Update these paths according to your local system setup.
-    addons_path = r"C:\Program Files (x86)\Steam\steamapps\common\Left 4 Dead 2\left4dead2\addons"
-    target_folder = r"C:\L4D2_Repair"
-
     # Create the target directory if it doesn't exist
+    target_folder = r"C:\L4D2_Repair"
     if not os.path.exists(target_folder):
         os.makedirs(target_folder)
 
